@@ -3013,7 +3013,6 @@ class TestDynamicRecords(TestCase):
                 'pools': {
                     'one': {
                         'values': [{
-                            'weight': 10,
                             'value': '3.3.3.3',
                         }],
                     },

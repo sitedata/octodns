@@ -430,15 +430,6 @@ class _DynamicPool(object):
         ]
         values.sort(key=lambda d: d['value'])
 
-        # normalize weight of a single-value pool
-        if len(values) == 1:
-            weight = data['values'][0].get('weight', 1)
-            if weight != 1:
-                self.log.warn(
-                    'Using weight=1 instead of %s for single-value pool %s',
-                    weight, _id)
-                values[0]['weight'] = 1
-
         fallback = data.get('fallback', None)
         self.data = {
             'fallback': fallback if fallback != 'default' else None,
